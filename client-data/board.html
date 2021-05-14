@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="En">
+
+<head>
+	<meta charset="utf-8" />
+	<title>vm173 WhiteBoard</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<link rel="stylesheet" type="text/css" href="./board.css" />
+	<script src="../socket.io/socket.io.js"></script>
+	<link rel="apple-touch-icon" href="../favicon.svg">
+	<link rel="icon" type="image/x-icon" sizes="16x16" href="../favicon.ico">
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0" />
+	<meta property="title" content="vm173 WhiteBoard" />
+	<script src="../polyfill.min.js"></script>
+	
+</head>
+
+<body>
+	<div style="padding-top: 10px;padding-right: 10px;">
+	<input type="button" value="Exit Board" style="float: right;color: #fff;
+    background-color: #007bff;
+    border-color: #007bff;display: inline-block;
+    font-weight: 400;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    border: 1px solid transparent;
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    border-radius: .25rem;
+    transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;">
+	</div>	
+
+	<div id="board">
+		<svg id="canvas" width="500" height="500" version="1.1" xmlns="http://www.w3.org/2000/svg">
+			<defs id="defs"></defs>
+			<g id="drawingArea"></g>
+			<g id="cursors"></g>
+		</svg>
+	</div>
+	
+	<div id="loadingMessage">Loading Please Wait...</div>
+
+	<div id="menu">
+
+		<h1 style="border:1px solid #000000;margin-top: 10px;width: max-content;
+		box-shadow: inset 0 0 3px #8FA2BC;">Welcome <span style="color: brown;" id="myText"></span>
+			<span id=""> to the Board</span>
+			<span style="color: brown;"id="myBoardName"></span></h1>
+		<div id="menuItems">
+			<ul id="tools" class="tools">
+				<li class="tool" tabindex="-1">
+					<img class="tool-icon" width="35" height="35" src="" alt="icon" />
+					<span class="tool-name"></span>
+					<img class="tool-icon secondaryIcon" width="35" height="35" src="data:," alt="icon" />
+				</li>
+			</ul>
+
+			<ul class="tools" id="settings">
+				<li class="tool" tabindex="-1">
+					<input class="tool-icon" type="color" id="chooseColor" value="#1913B0" />
+					<label class="tool-name" for="chooseColor">Color</label>
+					<span class="colorPresets" id="colorPresetSel">
+						<span class="colorPresetButton"></span>
+					</span>
+				</li>
+			</ul>
+
+			<ul class="tools">
+				
+			<div >
+				<input type="button" value="Users Currently Logged In" style="color: #fff;
+				background-color: #007bff;
+				border-color: #007bff;display: inline-block;
+				font-weight: 400;
+				text-align: center;
+				white-space: nowrap;
+				vertical-align: middle;
+				-webkit-user-select: none;
+				-moz-user-select: none;
+				-ms-user-select: none;
+				user-select: none;
+				border: 1px solid transparent;
+				padding: .375rem .75rem;
+				font-size: 1rem;
+				line-height: 1.5;
+				border-radius: .25rem;
+				transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;">
+			</div>	
+		
+			</ul>
+			
+			<ul class="tools" id="un">
+				
+			</ul>
+		</div>
+	</div>
+
+	<div class="jumbotron" style="margin-bottom: 2rem;
+    background-color: #e9ecef;
+    border-radius: .3rem;padding: 4rem 2rem;">
+		<h4 style="font-size: 1.5rem;margin-bottom: .5rem;
+		font-weight: 500;
+		line-height: 1.2;display: block;
+    margin-block-start: 1.33em;
+    margin-block-end: 1.33em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;">Any Queries</h4>
+		<h5 style="font-size: 1.25rem;margin-bottom: .5rem;
+		font-weight: 500;
+		line-height: 1.2;display: block;
+    margin-block-start: 1.33em;
+    margin-block-end: 1.33em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;">Contact me at nrk10@student.le.ac.uk</h5>
+		
+		
+	  </div>
+	
+
+
+	<script type="application/json" id="translations">{{{ json translations }}}</script>
+	<script type="application/json" id="configuration">{{{ json configuration }}}</script>
+	<script src="../js/path-data-polyfill.js"></script>
+	<script src="../js/minitpl.js"></script>
+	<script src="../js/board.js"></script>
+	<script src="../tools/pencil/pencil_point.js"></script>
+	<script src="../tools/pencil/pencil.js"></script>
+	<script src="../tools/cursor/cursor.js"></script>
+	<script src="../tools/line/line.js"></script>
+	<script src="../tools/rect/rect.js"></script>
+	<script src="../tools/text/text.js"></script>
+	<script src="../tools/eraser/eraser.js"></script>
+	
+	<script src="../js/canvascolor.js"></script>
+</body>
+
+</html>
